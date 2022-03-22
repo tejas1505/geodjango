@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 <body>
-    <p>{{data | safe}}</p>
+    <p>{{data.city}}</p>
+    <p>{{data.temperature}}{{data.format}}</p>
+    <p>{{data.windspeed}}{{data.direction}}</p>
+    <p>{{data.description}}</p>
 </body>
 </html>
