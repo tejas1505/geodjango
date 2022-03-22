@@ -1,3 +1,5 @@
+#https://www.digitalocean.com/community/tutorials/how-to-build-a-weather-app-in-django
+
 from django.shortcuts import render
 import requests
 
