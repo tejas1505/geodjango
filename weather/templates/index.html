@@ -38,7 +38,7 @@
 <div id="map" style="width: 80%; height: 70vh;"></div>
 <script>
 
-	var map = L.map('map').setView([27.7364285, -81.641693], 13);
+	var map = L.map('map').setView([31.4758193, -99.033429], 5);
 
 	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -49,7 +49,7 @@
 		zoomOffset: -1
 	}).addTo(map);
 
-	var marker = L.marker([27.7364285, -81.641693]).addTo(map)
+	var marker = L.marker([31.4758193, -99.033429]).addTo(map)
 		.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
     var len='{{length}}';
 
@@ -60,9 +60,11 @@
     var latitude='{{dat.latitude}}';
     var longitude='{{dat.longitude}}';
     var marker = L.marker([latitude, longitude]).addTo(map)
-		.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+		.bindPopup('<font style="font-size:16px"><b>{{dat.city}} : {{dat.temperature}} {{dat.format}} temperature</b></font><br>{{dat.windspeed}} Windspeed<br>{{dat.description}}').openPopup();
 </script>
 {% endfor %}
-
+<script>
+	map.panTo(new L.LatLng(31.4758193, -99.033429));
+</script>
 </body>
 </html>

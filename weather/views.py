@@ -25,6 +25,7 @@ def index(request):
             'longitude': data.longitude,
         }
         weatherlist.append(weather)
+        print(data.name)
     context['data']=weatherlist
     context['length']=len(weatherlist)
     
